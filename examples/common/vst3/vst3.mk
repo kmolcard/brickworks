@@ -1,7 +1,7 @@
 default: all
 
 COMMON_DIR := ${ROOT_DIR}/../../common/vst3
-VST3_SDK_DIR := ${ROOT_DIR}/../../../../VST_SDK/vst3sdk
+VST3_SDK_DIR := ${ROOT_DIR}/../../../../../../VST_SDK/vst3sdk/
 TEMPLATE_DIR := ${ROOT_DIR}/../../common/vst3/template.vst3
 BUILD_PLUGIN_DIR := build/${NAME}.vst3
 
