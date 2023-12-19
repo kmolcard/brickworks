@@ -32,7 +32,9 @@ extern "C" {
 
 enum {
 	p_balance,
-	p_n
+    p_leftlevel,
+    p_rightlevel,
+    p_n
 };
 
 struct _bw_example_fxpp_balance {
