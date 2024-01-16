@@ -35,6 +35,7 @@ enum {
 	p_attack,
 	p_release,
 	p_gain,
+	p_gaincomp,
 	p_n
 };
 

@@ -744,6 +744,14 @@ static inline void bw_comp_set_gain_dB(
 	BW_ASSERT_DEEP(bw_comp_coeffs_is_valid(coeffs));
 	BW_ASSERT_DEEP(coeffs->state >= bw_comp_coeffs_state_init);
 }
+    
+static inline float bw_comp_get_gain_comp(
+        bw_comp_state * BW_RESTRICT state) {
+    BW_ASSERT(state != BW_NULL);
+    BW_ASSERT_DEEP(bw_comp_state_is_valid(BW_NULL, state));
+
+    return bw_env_follow_get_y_z1(&state->env_follow_state);
+}
 
 static inline char bw_comp_coeffs_is_valid(
 		const bw_comp_coeffs * BW_RESTRICT coeffs) {
@@ -870,6 +878,9 @@ public:
 
 	void setGainDB(
 		float value);
+    
+    float getGainComp();
+    
 /*! <<<...
  *  }
  *  ```
@@ -996,6 +1007,11 @@ template<size_t N_CHANNELS>
 inline void Comp<N_CHANNELS>::setGainDB(
 		float value) {
 	bw_comp_set_gain_dB(&coeffs, value);
+}
+
+template<size_t N_CHANNELS>
+inline float Comp<N_CHANNELS>::getGainComp() {
+    return bw_comp_get_gain_comp(states);
 }
 
 }

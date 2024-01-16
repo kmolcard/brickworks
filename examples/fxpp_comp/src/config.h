@@ -66,14 +66,15 @@ static struct config_io_bus config_buses_out[NUM_BUSES_OUT] = {
 	{ "Audio out", 1, 0, 0, IO_MONO }
 };
 
-#define NUM_PARAMETERS		5
+#define NUM_PARAMETERS		6
 
 static struct config_parameter config_parameters[NUM_PARAMETERS] = {
 	{ "Threshold", "Thresh", "", 0, 0, 0, 1.f },
 	{ "Ratio", "Ratio", "", 0, 0, 0, 1.f },
 	{ "Attack", "Attack", "s", 0, 0, 0, 0.f },
 	{ "Release", "Release", "s", 0, 0, 0, 0.f },
-	{ "Makeup gain", "Gain", "", 0, 0, 0, 0.f }
+	{ "Makeup gain", "Gain", "", 0, 0, 0, 0.f },
+	{ "Gain Compensation", "GainComp", "", 1, 0, 0, 0.f }
 };
 
 // Internal API

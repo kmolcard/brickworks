@@ -58,5 +58,16 @@ void bw_example_fxpp_comp_set_parameter(bw_example_fxpp_comp *instance, int inde
 }
 
 float bw_example_fxpp_comp_get_parameter(bw_example_fxpp_comp *instance, int index) {
-	return instance->params[index];
+    float r = 0.f;
+    switch (index) {
+    case p_gaincomp:
+        r = instance->comp.getGainComp();
+        break;
+    default:
+    {
+        r = instance->params[index];
+        break;
+    }
+    }
+    return r;
 }
